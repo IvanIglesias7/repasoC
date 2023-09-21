@@ -8,6 +8,10 @@ namespace Repaso1.Modelo
 {
     public interface empleadoServicio
     {
-        public void AddEmpleado();
+        void AddEmpleado(empleado emp);
+
+        empleado GetEmpleado();
+
+        void MuestraEmpleado();
     }
 }

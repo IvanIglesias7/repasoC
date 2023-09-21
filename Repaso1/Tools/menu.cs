@@ -6,24 +6,34 @@ using System.Threading.Tasks;
 
 namespace Repaso1.Tools
 {
-    public class tools
+    public static class tools
     {
 
-        public void menu()
+        public static void menu()
         {
             Console.WriteLine("Bienvenid@ a la app!");
 
             Console.WriteLine("1. Añadir un empleado");
             Console.WriteLine("2. Modificar un empleado");
             Console.WriteLine("3. Exportar a fichero");
+            Console.WriteLine("4. Mostrar empleados");
             Console.WriteLine("0. Salir");
         }
 
-        public int opcionMenu()
+        public static int opcionMenu()
         {
-            Console.WriteLine("Elige una opcion: ");
-            int num = int.Parse(Console.ReadLine());
+            int num;
+            bool ok = true;
+            do
+            {
+                Console.WriteLine("Elige una opcion: ");
+                num = int.Parse(Console.ReadLine());
 
+                if (num < 0 || num > 3)
+                    ok = false;
+
+            } while (!ok);
+            
             return num;
         }
     }

@@ -1,0 +1,7 @@
+C:\Users\Puesto7\source\repos\Repaso\Repaso1\bin\Debug\Repaso1.exe.config
+C:\Users\Puesto7\source\repos\Repaso\Repaso1\bin\Debug\Repaso1.exe
+C:\Users\Puesto7\source\repos\Repaso\Repaso1\bin\Debug\Repaso1.pdb
+C:\Users\Puesto7\source\repos\Repaso\Repaso1\obj\Debug\Repaso1.csproj.AssemblyReference.cache
+C:\Users\Puesto7\source\repos\Repaso\Repaso1\obj\Debug\Repaso1.csproj.CoreCompileInputs.cache
+C:\Users\Puesto7\source\repos\Repaso\Repaso1\obj\Debug\Repaso1.exe
+C:\Users\Puesto7\source\repos\Repaso\Repaso1\obj\Debug\Repaso1.pdb
