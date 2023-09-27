@@ -14,6 +14,10 @@ namespace Repaso1.Modelo
 
         void MuestraEmpleado();
 
-        void ModificaEmpleado(int id);
+        void ModificaEmpleado();
+
+        void EscribeFicheroLista();
+
+        void EscribeFicheroEmpleado();
     }
 }

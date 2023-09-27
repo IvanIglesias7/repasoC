@@ -15,8 +15,9 @@ namespace Repaso1.Tools
 
             Console.WriteLine("1. Añadir un empleado");
             Console.WriteLine("2. Modificar un empleado");
-            Console.WriteLine("3. Exportar a fichero");
-            Console.WriteLine("4. Mostrar empleados");
+            Console.WriteLine("3. Exportar lista de empleados a fichero");
+            Console.WriteLine("4. Exporta un solo empleado a fichero");
+            Console.WriteLine("5. Mostrar empleados");
             Console.WriteLine("0. Salir");
         }
 
@@ -29,7 +30,7 @@ namespace Repaso1.Tools
                 Console.WriteLine("Elige una opcion: ");
                 num = int.Parse(Console.ReadLine());
 
-                if (num < 0 || num > 4)
+                if (num < 0 || num > 5)
                     ok = false;
 
             } while (!ok);

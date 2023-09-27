@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -13,6 +14,50 @@ namespace Repaso1.Modelo
         public void AddEmpleado(empleado emp)
         {
             empleadoList.Add(emp);
+        }
+
+        public void EscribeFicheroEmpleado()
+        {
+            StreamWriter sw = new StreamWriter("ficheroEmpleadoSolo.txt");
+
+            Console.WriteLine("Estos son los empleados: ");
+            MuestraEmpleado();
+
+            Console.WriteLine("Id del empleado que quiera exportar a fichero?");
+            int id = Int32.Parse(Console.ReadLine());
+
+            foreach (empleado e in empleadoList)
+            {
+                if(id == e.Id)
+                {
+                    sw.Write(e.ToString());
+                    sw.Close();
+                }
+
+            }
+        }
+        public void EscribeFicheroLista()
+        {
+            StreamWriter sw = new StreamWriter("prueba.txt");
+            foreach (empleado e in empleadoList)
+            {
+                sw.Write("\tNombre" + e.Nombre);
+                sw.Write("\tApellidos" + e.Apellidos);
+                sw.Write("\tFechaNac" + e.FechaNac);
+                sw.Write("\tDni" + e.Dni);
+                sw.Write("\tTituAlta" + e.TituAlta);
+                sw.Write("\tNSeguridadS1" + e.NSeguridadS1);
+                sw.Write("\tNCuenta1" + e.NCuenta1);
+                sw.Write("\tID " + e.Id);
+                sw.WriteLine("");
+            }
+            sw.Close();
+            StreamReader sr = new StreamReader("prueba.txt");
+
+            while (!sr.EndOfStream)
+            {
+                sr.ReadLine();
+            }
         }
 
         public empleado GetEmpleado()
@@ -71,7 +116,7 @@ namespace Repaso1.Modelo
             return emp;
         }
 
-        public void ModificaEmpleado(int id)
+        public void ModificaEmpleado()
         {
             bool existe = true;
 
@@ -79,13 +124,13 @@ namespace Repaso1.Modelo
             MuestraEmpleado();
 
             Console.WriteLine("Id del empleado a modificar?");
-            int num = Int32.Parse(Console.ReadLine());
+            int id = Int32.Parse(Console.ReadLine());
 
-            do
+            while (!existe)
             {
                 foreach (empleado e in empleadoList)
                 {
-                    if (e.Id == num)
+                    if (e.Id == id)
                     {
                         Console.WriteLine("Se modificará el empleado con DNI: " + e.Dni);
                         AddEmpleado(GetEmpleado());
@@ -96,21 +141,21 @@ namespace Repaso1.Modelo
                         Console.WriteLine("Id no existente");
                         existe = false;
                     }
-
                 }
-            } while (!existe);
+            }
         }
         public void MuestraEmpleado()
         {
             foreach (empleado e in empleadoList)
             {
-                Console.Write("\t" + e.Nombre);
-                Console.Write("\t" + e.Apellidos);
-                Console.Write("\t" + e.FechaNac);
-                Console.Write("\t" + e.Dni);
-                Console.Write("\t" + e.TituAlta);
-                Console.Write("\t" + e.NSeguridadS1);
-                Console.Write("\t" + e.NCuenta1);
+                Console.Write("\tNombre" + e.Nombre);
+                Console.Write("\tApellidos" + e.Apellidos);
+                Console.Write("\tFechaNac" + e.FechaNac);
+                Console.Write("\tDni" + e.Dni);
+                Console.Write("\tTituAlta" + e.TituAlta);
+                Console.Write("\tNSeguridadS1" + e.NSeguridadS1);
+                Console.Write("\tNCuenta1" + e.NCuenta1);
+                Console.Write("\tID " + e.Id);
                 Console.WriteLine("");
             }
         }

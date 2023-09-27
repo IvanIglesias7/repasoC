@@ -16,17 +16,20 @@ namespace Repaso1
             bool salir = false;
             empleadoImpl empleadoImpl = new empleadoImpl();
             empleado emp = new empleado();
+            int id = 0;
             
             do
             {
                 Console.Clear();
                 tools.menu();
                 int opcion = tools.opcionMenu();
+                id++;
 
                 switch (opcion)
                 {
                     case 1:
                         emp = empleadoImpl.GetEmpleado();
+                        emp.Id = id;
                         empleadoImpl.AddEmpleado(emp);
 
                         tools.mensajeVolverMenu();
@@ -34,16 +37,23 @@ namespace Repaso1
 
                     case 2:
 
+                        empleadoImpl.ModificaEmpleado();
+
                         tools.mensajeVolverMenu();
                         break;
 
                     case 3:
 
-
+                        empleadoImpl.EscribeFicheroLista();
                         tools.mensajeVolverMenu();
                         break;
 
-                    case 4:
+                    case 4: 
+                        empleadoImpl.EscribeFicheroEmpleado();
+                        tools.mensajeVolverMenu();
+                        break;
+
+                    case 5:
                         empleadoImpl.MuestraEmpleado();
 
                         tools.mensajeVolverMenu();

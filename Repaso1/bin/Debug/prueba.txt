@@ -1,0 +1,2 @@
+	Nombrea	Apellidosa	FechaNaca	Dnia	TituAltaa	NSeguridadS11	NCuenta11	ID 1
+	Nombreb	Apellidosb	FechaNacb	Dnib	TituAltab	NSeguridadS12	NCuenta12	ID 2
