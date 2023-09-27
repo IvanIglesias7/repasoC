@@ -30,7 +30,11 @@ namespace Repaso1.Modelo
             {
                 if(id == e.Id)
                 {
-                    sw.Write(e.ToString());
+                    sw.Write("\tNombre" + e.Nombre);
+                    sw.Write("\tApellidos" + e.Apellidos);
+                    sw.Write("\tFechaNac" + e.FechaNac);
+                    sw.Write("\tDni" + e.Dni);
+                    sw.Write("\tTituAlta" + e.TituAlta);
                     sw.Close();
                 }
 
@@ -46,9 +50,6 @@ namespace Repaso1.Modelo
                 sw.Write("\tFechaNac" + e.FechaNac);
                 sw.Write("\tDni" + e.Dni);
                 sw.Write("\tTituAlta" + e.TituAlta);
-                sw.Write("\tNSeguridadS1" + e.NSeguridadS1);
-                sw.Write("\tNCuenta1" + e.NCuenta1);
-                sw.Write("\tID " + e.Id);
                 sw.WriteLine("");
             }
             sw.Close();
@@ -118,7 +119,7 @@ namespace Repaso1.Modelo
 
         public void ModificaEmpleado()
         {
-            bool existe = true;
+            bool existe = false;
 
             Console.WriteLine("Estos son los empleados: ");
             MuestraEmpleado();
@@ -135,11 +136,12 @@ namespace Repaso1.Modelo
                         Console.WriteLine("Se modificará el empleado con DNI: " + e.Dni);
                         AddEmpleado(GetEmpleado());
                         empleadoList.Remove(e);
+                        existe = true;
                     }
                     else
                     {
                         Console.WriteLine("Id no existente");
-                        existe = false;
+                        
                     }
                 }
             }
