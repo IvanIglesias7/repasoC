@@ -29,12 +29,18 @@ namespace Repaso1.Tools
                 Console.WriteLine("Elige una opcion: ");
                 num = int.Parse(Console.ReadLine());
 
-                if (num < 0 || num > 3)
+                if (num < 0 || num > 4)
                     ok = false;
 
             } while (!ok);
             
             return num;
+        }
+
+        public static void mensajeVolverMenu()
+        {
+            Console.WriteLine("Pulse intro para volver al menú");
+            Console.ReadLine();
         }
     }
 }

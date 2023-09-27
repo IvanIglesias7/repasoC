@@ -13,5 +13,7 @@ namespace Repaso1.Modelo
         empleado GetEmpleado();
 
         void MuestraEmpleado();
+
+        void ModificaEmpleado(int id);
     }
 }

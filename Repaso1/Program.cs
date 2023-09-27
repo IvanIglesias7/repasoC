@@ -16,36 +16,52 @@ namespace Repaso1
             bool salir = false;
             empleadoImpl empleadoImpl = new empleadoImpl();
             empleado emp = new empleado();
-            tools.menu();
             
             do
             {
+                Console.Clear();
+                tools.menu();
                 int opcion = tools.opcionMenu();
 
                 switch (opcion)
                 {
-                    case 0:
-                        Console.WriteLine("Hasta luego!");
-                        salir = true;
-                        break;
-
                     case 1:
                         emp = empleadoImpl.GetEmpleado();
                         empleadoImpl.AddEmpleado(emp);
+
+                        tools.mensajeVolverMenu();
                         break;
 
                     case 2:
+
+                        tools.mensajeVolverMenu();
                         break;
 
                     case 3:
+
+
+                        tools.mensajeVolverMenu();
                         break;
 
                     case 4:
                         empleadoImpl.MuestraEmpleado();
+
+                        tools.mensajeVolverMenu();
+                        break;
+                    case 0:
+                        Console.WriteLine("Hasta luego!");
+
+                        Console.WriteLine("\nPulse intro para salir");
+                        salir = true;
                         break;
 
+                    default:
+                        Console.WriteLine("Valor no válido");
+                        break;
                 }
 
+
+                
             } while (!salir);
             
 

@@ -13,12 +13,12 @@ namespace Repaso1.Modelo
         string apellidos;
         string dni;
         string tituAlta;
-        DateTime fechaNac;
+        string fechaNac;
         int NSeguridadS;
         int NCuenta;
 
 
-        public empleado(string nombre, string apellidos, string dni, DateTime fechaNac, string tituAlta,  int nSeguridadS, int nCuenta)
+        public empleado(string nombre, string apellidos, string dni, string fechaNac, string tituAlta,  int nSeguridadS, int nCuenta)
         {
             this.nombre = nombre;
             this.apellidos = apellidos;
@@ -27,7 +27,6 @@ namespace Repaso1.Modelo
             this.fechaNac = fechaNac;
             NSeguridadS = nSeguridadS;
             NCuenta = nCuenta;
-            this.id = id++;
         }
 
         public empleado()
@@ -39,8 +38,17 @@ namespace Repaso1.Modelo
         public string Dni { get => dni; set => dni = value; }
 
         public string TituAlta { get => dni; set => dni = value; }
-        public DateTime FechaNac { get => fechaNac; set => fechaNac = value; }
+        public string FechaNac { get => fechaNac; set => fechaNac = value; }
         public int NSeguridadS1 { get => NSeguridadS; set => NSeguridadS = value; }
         public int NCuenta1 { get => NCuenta; set => NCuenta = value; }
+
+        public int Id { get => id; set => id = value;}
+
+
+
     }
+
+
+
+
 }
